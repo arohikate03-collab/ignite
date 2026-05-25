@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IEEE IGNITE 2.0 - Research Conference</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "golden-glow": "#D4AF37",
+        "deep-navy": "#0F1B88",
+        "surface": "#f4fafd",
+        "paper-white": "#FFFFFF",
+        "primary": "#345f89",
+        "secondary": "#5e5e5b",
+        "tertiary": "#9e3c1e",
+        "tertiary-container": "#be5434",
+        "on-surface": "#161d1f",
+        "on-surface-variant": "#42474e",
+        "on-primary": "#ffffff",
+        "on-tertiary": "#ffffff",
+        "surface-container": "#e8eff1",
+        "surface-container-low": "#eef5f7",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-high": "#e2e9ec",
+        "surface-container-highest": "#dde4e6",
+        "surface-variant": "#dde4e6",
+        "surface-bright": "#f4fafd",
+        "surface-dim": "#d4dbdd",
+        "outline": "#72777f",
+        "outline-variant": "#c2c7cf",
+        "primary-fixed": "#d1e4ff",
+        "primary-fixed-dim": "#a1cafb",
+        "primary-container": "#4e77a4",
+        "on-primary-container": "#fdfcff",
+        "on-primary-fixed": "#001d35",
+        "on-primary-fixed-variant": "#1b4973",
+        "inverse-primary": "#a1cafb",
+        "secondary-container": "#e1dfdb",
+        "secondary-fixed": "#e4e2dd",
+        "secondary-fixed-dim": "#c8c6c2",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#63635f",
+        "on-secondary-fixed": "#1b1c19",
+        "on-secondary-fixed-variant": "#474744",
+        "tertiary-fixed": "#ffdbd1",
+        "tertiary-fixed-dim": "#ffb59f",
+        "on-tertiary-fixed": "#3b0a00",
+        "on-tertiary-fixed-variant": "#81280a",
+        "on-tertiary-container": "#fffbff",
+        "soft-gold": "#FBF3DB",
+        "coral-warmth": "#FF6B6B",
+        "electric-cyan": "#00F2FF",
+        "background": "#f4fafd",
+        "on-background": "#161d1f",
+        "inverse-surface": "#2b3234",
+        "inverse-on-surface": "#ebf2f4",
+        "surface-tint": "#37618c",
+        "error": "#ba1a1a",
+        "on-error": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-error-container": "#93000a",
+      },
+      spacing: {
+        "section-gap": "120px",
+        "margin-desktop": "64px",
+        "margin-mobile": "16px",
+        "gutter": "24px",
+        "container-max": "1280px",
+        "base": "8px",
+      },
+      fontFamily: {
+        "body-md": ["DM Sans"],
+        "body-lg": ["DM Sans"],
+        "headline-md": ["Hanken Grotesk"],
+        "headline-lg": ["Hanken Grotesk"],
+        "headline-xl": ["Hanken Grotesk"],
+        "headline-lg-mobile": ["Hanken Grotesk"],
+        "display-lg": ["Hanken Grotesk"],
+        "label-md": ["Hanken Grotesk"],
+        "label-sm": ["Hanken Grotesk"],
+        "label-caps": ["JetBrains Mono"],
+        "script": ["Great Vibes"],
+      },
+      fontSize: {
+        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+        "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+      },
+      borderRadius: {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem",
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'flow-line': 'flow-line 2s linear infinite',
+        'pulse-width': 'pulse-width 3s infinite ease-in-out',
+      },
+      keyframes: {
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '.8', transform: 'scale(1.02)' },
+        },
+        'flow-line': {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+        'pulse-width': {
+          '0%, 100%': { transform: 'scaleX(0.3)', opacity: '0.5' },
+          '50%': { transform: 'scaleX(1)', opacity: '1' },
+        },
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .fill-icon { font-variation-settings: 'FILL' 1; }
+  .hero-gradient {
+    background: linear-gradient(to bottom, rgba(15,27,136,0.4), rgba(15,27,136,0.7)), url('background.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .logo-glow { filter: drop-shadow(0 0 8px rgba(212,175,55,0.6)); }
+  .gold-gradient {
+    background: linear-gradient(to right, #D4AF37, #FFD700, #DAA520, #F0E68C, #B8860B);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .academic-card {
+    background: #fff;
+    border: 1px solid rgba(10,37,64,0.1);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+  .academic-card:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); transform: translateY(-4px); }
+  .glass-card-neon {
+    background: #fff; border: 1px solid #dde4e6; border-radius: 1rem;
+    position: relative; z-index: 1; transition: all 0.4s cubic-bezier(0.25,0.8,0.25,1); overflow: hidden;
+  }
+  .glass-card-neon:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(15,27,136,0.1); border-color: transparent; }
+  .glass-card-neon::before { content:''; position:absolute; inset:0; border-radius:1rem; padding:2px; background:linear-gradient(135deg,#00d2ff,#3a7bd5); -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity 0.4s ease; z-index:-1; }
+  .glass-card-neon:hover::before { opacity:1; }
+  .card-ai::before { background: linear-gradient(135deg,#00c6ff,#0072ff); }
+  .card-iot::before { background: linear-gradient(135deg,#f12711,#f5af19); }
+  .card-cyber::before { background: linear-gradient(135deg,#11998e,#38ef7d); }
+  .card-robot::before { background: linear-gradient(135deg,#8A2387,#E94057,#F27121); }
+  .card-data::before { background: linear-gradient(135deg,#D4AF37,#F2D472); }
+  .bento-card {
+    background: #fff; border: 1px solid #d1e4ff;
+    box-shadow: 0 10px 30px -10px rgba(52,95,137,0.2), 0 4px 6px -4px rgba(52,95,137,0.1);
+    position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .bento-card:hover { box-shadow: 0 0 20px 2px rgba(212,175,55,0.3); border-color: #D4AF37; transform: translateY(-4px); }
+  .bento-content { position: relative; z-index: 1; }
+  .status-badge { background: linear-gradient(90deg,#be5434,#9e3c1e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .status-badge-active { background: linear-gradient(90deg,#345f89,#0F1B88); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .flow-line-h { position:absolute; height:2px; background:linear-gradient(90deg,transparent,#a1cafb,transparent); background-size:200% 100%; opacity:0.5; z-index:0; }
+  .flow-line-v { position:absolute; width:2px; background:linear-gradient(180deg,transparent,#a1cafb,transparent); background-size:100% 200%; opacity:0.5; z-index:0; }
+  @media (min-width:768px) {
+    .line-1 { top:50%; left:25%; right:25%; animation: flow-line 3s linear infinite; }
+    .line-2 { top:25%; bottom:25%; left:50%; animation: flow-line 3s linear infinite; }
+  }
+  .shine-sweep { position:relative; overflow:hidden; }
+  .shine-sweep::after { content:''; position:absolute; top:-50%; left:-60%; width:20%; height:200%; background:rgba(255,255,255,0.3); transform:rotate(30deg); transition:all 0.5s; }
+  .shine-sweep:hover::after { left:120%; }
+  .mesh-bg {
+    background-color: #fff;
+    background-image: radial-gradient(at 0% 0%,rgba(52,95,137,0.05) 0px,transparent 50%), radial-gradient(at 100% 0%,rgba(212,175,55,0.04) 0px,transparent 50%), radial-gradient(at 100% 100%,rgba(158,60,30,0.03) 0px,transparent 50%), radial-gradient(at 0% 100%,rgba(15,27,136,0.03) 0px,transparent 50%);
+  }
+  .particle { position:absolute; width:4px; height:4px; background:#D4AF37; border-radius:50%; pointer-events:none; opacity:0.2; animation:float 20s infinite linear; }
+  .animated-underline { position:relative; }
+  .animated-underline::after { content:''; position:absolute; bottom:-8px; left:0; width:100%; height:4px; background:linear-gradient(90deg,transparent,#D4AF37,transparent); animation:pulse-width 3s infinite ease-in-out; }
+  .bg-gold-gradient { background: linear-gradient(135deg,#D4AF37 0%,#F2D472 100%); }
+  .shadow-custom-subtle { box-shadow: 0 4px 24px rgba(15,27,136,0.04); }
+  .hover-glow:hover { box-shadow: 0 0 15px rgba(212,175,55,0.4); border-color: #D4AF37; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-paper-white/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+  <div class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+    <div class="flex items-center gap-4">
+      <img src="ignite_logo.png" alt="IGNITE Logo" class="h-20 w-auto max-w-[240px] object-contain">
+    </div>
+    <div class="hidden md:flex gap-6 items-center">
+      <a href="#home" class="font-label-caps text-sm text-deep-navy uppercase tracking-[0.1em] hover:text-primary transition-colors">Home</a>
+      <a href="#about" class="font-label-caps text-sm text-on-surface-variant uppercase tracking-[0.1em] hover:text-deep-navy transition-colors">About</a>
+      <a href="#prizes" class="font-label-caps text-sm text-on-surface-variant uppercase tracking-[0.1em] hover:text-deep-navy transition-colors">Prizes</a>
+      <a href="#tracks" class="font-label-caps text-sm text-on-surface-variant uppercase tracking-[0.1em] hover:text-deep-navy transition-colors">Tracks</a>
+      <a href="#submission" class="font-label-caps text-sm text-on-surface-variant uppercase tracking-[0.1em] hover:text-deep-navy transition-colors">Submission</a>
+      <a href="#timeline" class="font-label-caps text-sm text-on-surface-variant uppercase tracking-[0.1em] hover:text-deep-navy transition-colors">Timeline</a>
+      <a href="#committee" class="font-label-caps text-sm text-on-surface-variant uppercase tracking-[0.1em] hover:text-deep-navy transition-colors">Committee</a>
+      <a href="#contact" class="font-label-caps text-sm text-on-surface-variant uppercase tracking-[0.1em] hover:text-deep-navy transition-colors">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME SECTION -->
+<section id="home" class="relative min-h-[95vh] flex flex-col items-center justify-center text-center overflow-hidden hero-gradient pt-20">
+  <div class="w-full max-w-2xl px-margin-mobile mb-12 flex justify-center items-center">
+    <div class="flex items-center bg-white shadow-xl border-2 border-golden-glow overflow-hidden divide-x divide-golden-glow/30 logo-glow rounded-full">
+      <div class="px-3 py-2 flex items-center justify-center">
+        <img src="student_branch.png" alt="IEEE Student Branch" class="h-20 w-32 object-contain">
+      </div>
+      <div class="px-3 py-2 flex items-center justify-center bg-surface-container-low">
+        <img src="acropolis.png" alt="Acropolis" class="h-20 w-32 object-contain">
+      </div>
+      <div class="px-3 py-2 flex items-center justify-center">
+        <img src="cssbc.png" alt="Computer Society" class="h-20 w-32 object-contain">
+      </div>
+    </div>
+  </div>
+  <div class="max-w-5xl px-margin-mobile space-y-8 relative z-10">
+    <div class="space-y-4">
+      <p class="font-headline-md text-white tracking-[0.1em] uppercase font-bold md:text-2xl drop-shadow-md text-[25px]">ACROPOLIS INSTITUTE OF TECHNOLOGY AND RESEARCH, INDORE</p>
+      <p class="font-script text-6xl text-golden-glow italic lowercase drop-shadow-md">presents</p>
+    </div>
+    <div class="space-y-2">
+      <h1 class="font-headline-xl text-headline-xl md:text-[90px] font-extrabold tracking-tight text-white drop-shadow-lg">IEEE IGNITE 2.0</h1>
+      <div class="relative inline-block mt-4">
+        <div class="absolute inset-0 bg-coral-warmth -skew-x-6"></div>
+        <h2 class="relative font-headline-lg text-lg md:text-2xl tracking-[0.2em] uppercase py-3 px-8 text-white font-bold">RESEARCH AND PROFESSIONAL AWARENESS CONFERENCE</h2>
+      </div>
+    </div>
+    <div class="pt-12 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+      <div class="text-right">
+        <span class="font-script text-5xl md:text-6xl text-coral-warmth">Save</span><br>
+        <span class="font-script text-5xl md:text-6xl text-coral-warmth ml-8">The Date</span>
+      </div>
+      <div class="hidden md:block w-px h-24 bg-golden-glow"></div>
+      <div class="text-left space-y-1">
+        <p class="font-headline-lg text-4xl md:text-6xl font-black leading-none text-white drop-shadow-md">OCTOBER</p>
+        <p class="font-headline-lg text-4xl md:text-6xl font-black leading-none text-white drop-shadow-md">31ST 2026</p>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-golden-glow to-transparent opacity-50"></div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="bg-surface-container-lowest py-section-gap">
+  <div class="max-w-container-max mx-auto px-margin-desktop">
+    <div class="flex flex-col md:flex-row gap-16 items-start">
+      <div class="md:w-1/3 sticky top-32 space-y-8">
+        <div>
+          <span class="font-label-caps text-primary bg-primary/10 px-3 py-1 rounded font-bold">DISCOVER</span>
+          <h2 class="font-headline-lg text-deep-navy mt-4">About the Conference</h2>
+          <div class="mt-8 w-20 h-1.5 bg-golden-glow rounded-full"></div>
+        </div>
+      </div>
+      <div class="md:w-2/3">
+        <div class="prose prose-lg text-on-surface-variant font-body-lg leading-relaxed space-y-6">
+          <p><strong>IEEE IGNITE 2.0</strong> - IEEE aims to provide a vibrant platform for young researchers, innovators, and aspiring professionals from diverse disciplines including Engineering, Management, Pharmacy, Biosciences, Applied Sciences, Computer Applications, and other academic domains to present their ideas, showcase research contributions, and engage in meaningful and academic discussions with academicians, industry experts, researchers, and IEEE professionals.</p>
+          <p>By encouraging interdisciplinary learning and collaboration, the conference seeks to bridge the gap between academic knowledge and real-world technological, scientific, and industrial advancements. The conference will bring together participants from various IEEE Student Branch Chapters (SBCs) across IEEE Region 10 under the IEEE Madhya Pradesh Section, thereby creating a broader platform for technical interaction, networking, collaboration, and dissemination of innovative research work among students and young professionals.</p>
+          <p>IEEE IGNITE 2.0 will feature keynote and expert sessions delivered by eminent speakers on emerging technologies, innovation, entrepreneurship, critical thinking, and professional career development. In addition, dedicated Student-to-Young Professional interaction sessions will provide valuable insights into professional growth, industry expectations, research pathways, and the transition from student life to successful professional careers.</p>
+          <p>IEEE IGNITE 2.0 will also include multidisciplinary undergraduate and postgraduate technical paper presentation tracks, enabling participants to strengthen their research aptitude, technical communication, critical thinking, and presentation skills while receiving constructive feedback from experts and peers. Outstanding research presentations and innovative contributions will be recognized through awards and honors, motivating students toward academic and professional excellence. Funded under the IEEE SPAx Program and supported by the IEEE Foundation, the conference aspires to create an intellectually enriching and collaborative environment that empowers students to innovate, connect, and contribute meaningfully to the advancement of science, technology, healthcare, management, and society.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORS SECTION -->
+<section class="bg-surface-container-low pb-20 pt-16">
+  <div class="max-w-container-max mx-auto px-margin-desktop text-center">
+    <span class="font-label-caps text-on-surface-variant/60 font-bold tracking-widest text-lg">PROUDLY SUPPORTED BY</span>
+    <div class="mt-12 flex flex-wrap justify-center items-center gap-12">
+      <img src="logo1.png" alt="Sponsor 1" class="h-16 object-contain">
+      <img src="logo2.png" alt="Sponsor 2" class="h-16 object-contain">
+      <img src="logo3.jpeg" alt="Sponsor 3" class="h-16 object-contain">
+      <img src="logo4.jpeg" alt="Sponsor 4" class="h-16 object-contain">
+    </div>
+    <p class="mt-12 text-on-surface-variant italic text-base">Partner with us to empower the next generation of innovators.</p>
+  </div>
+</section>
+
+<!-- PRIZES SECTION -->
+<section id="prizes" class="py-20" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('rasasa.jpg'); background-size: cover; background-position: center;">
+  <div class="container mx-auto px-4 flex flex-col items-center">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-widest uppercase mb-4 text-white">IEEE Ignite 2.0 Presents</h2>
+      <div class="relative inline-block">
+        <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-2 pb-4" style="background: linear-gradient(to right, #00d2ff, #3a7bd5, #a855f7); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 0 20px rgba(0,210,255,0.8));">PRIZE POOL</h1>
+        <span class="absolute -top-6 -right-8 animate-pulse" style="color:#FFB000;"><span class="material-icons text-4xl">auto_awesome</span></span>
+        <span class="absolute bottom-4 -left-6 animate-pulse" style="color:#FFB000;"><span class="material-icons text-3xl">star_rate</span></span>
+      </div>
+    </div>
+    <div class="relative w-full max-w-4xl mx-auto mb-10 animate-float">
+      <div class="rounded-[2rem] p-8 text-center" style="background:rgba(10,37,64,0.95);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,0.4);box-shadow:0 8px 32px 0 rgba(0,0,0,0.6);">
+        <div class="mb-6"><span class="material-icons text-7xl gold-gradient">emoji_events</span></div>
+        <p class="text-xl md:text-2xl font-medium text-gray-300 mb-2 uppercase tracking-wider">Total Rewards Worth Over</p>
+        <div class="flex items-center justify-center">
+          <span class="text-7xl md:text-9xl font-black gold-gradient">₹50,000<span class="text-5xl md:text-7xl">+</span></span>
+        </div>
+        <div class="mt-8 flex justify-center space-x-4">
+          <span class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-sm font-semibold border border-blue-100" style="color:#0052cc;"><span class="material-icons text-sm mr-1">workspace_premium</span> Cash Prizes</span>
+          <span class="inline-flex items-center px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-semibold border border-green-100"><span class="material-icons text-sm mr-1">verified</span> Certificates</span>
+        </div>
+      </div>
+    </div>
+    <div class="w-full max-w-6xl mx-auto mt-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center uppercase tracking-widest mb-6 text-white">Track-wise Research Excellence Awards</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        <div class="rounded-2xl p-8 group transform transition duration-500 hover:scale-105 hover:-translate-y-2" style="background:rgba(10,37,64,0.95);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,0.4);box-shadow:0 8px 32px 0 rgba(0,0,0,0.6);">
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-inner" style="background:#2a2410;border:2px solid rgba(212,175,55,0.5);"><span class="material-icons text-4xl text-yellow-500">emoji_events</span></div>
+            <h3 class="text-xl font-bold mb-2 text-center text-white">Winner</h3>
+            <div class="w-12 h-1 bg-yellow-500 rounded-full mb-2 group-hover:w-full transition-all duration-300"></div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-8 group transform transition duration-500 hover:scale-105 hover:-translate-y-2" style="background:rgba(10,37,64,0.95);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,0.4);box-shadow:0 8px 32px 0 rgba(0,0,0,0.6);">
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-inner" style="background:#1a1a1a;border:2px solid rgba(180,180,180,0.4);"><span class="material-icons text-4xl text-gray-400">military_tech</span></div>
+            <h3 class="text-xl font-bold mb-2 text-center text-white">Runner Up</h3>
+            <div class="w-12 h-1 bg-gray-400 rounded-full mb-2 group-hover:w-full transition-all duration-300"></div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-8 group transform transition duration-500 hover:scale-105 hover:-translate-y-2" style="background:rgba(10,37,64,0.95);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,0.4);box-shadow:0 8px 32px 0 rgba(0,0,0,0.6);">
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-inner" style="background:#2a1a10;border:2px solid rgba(249,115,22,0.4);"><span class="material-icons text-4xl text-orange-500">workspace_premium</span></div>
+            <h3 class="text-xl font-bold mb-2 text-center text-white">3rd Place</h3>
+            <div class="w-12 h-1 bg-orange-400 rounded-full mb-2 group-hover:w-full transition-all duration-300"></div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-8 group transform transition duration-500 hover:scale-105 hover:-translate-y-2" style="background:rgba(10,37,64,0.95);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,0.4);box-shadow:0 8px 32px 0 rgba(0,0,0,0.6);">
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-inner" style="background:#101a2a;border:2px solid rgba(59,130,246,0.4);"><span class="material-icons text-4xl text-blue-400">card_membership</span></div>
+            <h3 class="text-xl font-bold mb-2 text-center text-white">Consolation</h3>
+            <div class="w-12 h-1 bg-blue-500 rounded-full mb-2 group-hover:w-full transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH TRACKS SECTION -->
+<section id="tracks" class="bg-surface-container-lowest py-20">
+  <div class="max-w-container-max mx-auto px-margin-desktop">
+    <header class="text-center mb-16">
+      <h1 class="font-display-lg text-display-lg text-deep-navy mb-4 relative inline-block">CALL FOR PAPERS
+        <span class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-transparent via-golden-glow to-transparent rounded-full opacity-50"></span>
+      </h1>
+      <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mt-6">Explore our dynamic research tracks designed to push the boundaries of modern technology and academic discourse.</p>
+    </header>
+    <div class="flex flex-col gap-6">
+      <div class="glass-card-neon card-ai p-8 flex flex-col group cursor-pointer">
+        <div class="w-14 h-14 rounded-full bg-primary-fixed/30 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">neurology</span></div>
+        <h3 class="font-headline-md text-headline-md text-deep-navy mb-3 group-hover:text-primary transition-colors">Intelligent Systems, Data Science &amp; Computational Intelligence</h3>
+        <p class="font-body-md text-body-md text-secondary mt-auto leading-relaxed">Submissions focusing on AI, machine learning, and intelligent data-driven technologies.</p>
+      </div>
+      <div class="glass-card-neon card-iot p-8 flex flex-col group cursor-pointer">
+        <div class="w-14 h-14 rounded-full bg-tertiary-fixed/30 flex items-center justify-center mb-6 text-tertiary group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">hub</span></div>
+        <h3 class="font-headline-md text-headline-md text-deep-navy mb-3 group-hover:text-tertiary transition-colors">Secure, Distributed &amp; Next-Generation Computing Systems</h3>
+        <p class="font-body-md text-body-md text-secondary mt-auto leading-relaxed">Research on Cybersecurity, cloud computing, blockchain, and distributed systems.</p>
+      </div>
+      <div class="glass-card-neon card-cyber p-8 flex flex-col group cursor-pointer">
+        <div class="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mb-6 text-emerald-700 group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">memory</span></div>
+        <h3 class="font-headline-md text-headline-md text-deep-navy mb-3 group-hover:text-emerald-700 transition-colors">Next-Generation Core Engineering Systems</h3>
+        <p class="font-body-md text-body-md text-secondary mt-auto leading-relaxed">Explorations into Robotics, automation, embedded systems, and smart engineering technologies.</p>
+      </div>
+      <div class="glass-card-neon card-robot p-8 flex flex-col group cursor-pointer">
+        <div class="w-14 h-14 rounded-full bg-rose-100 flex items-center justify-center mb-6 text-rose-700 group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">query_stats</span></div>
+        <h3 class="font-headline-md text-headline-md text-deep-navy mb-3 group-hover:text-rose-700 transition-colors">Management, Business Analytics &amp; Organizational Studies</h3>
+        <p class="font-body-md text-body-md text-secondary mt-auto leading-relaxed">Submissions regarding Business strategy, analytics, innovation, and organizational research.</p>
+      </div>
+      <div class="glass-card-neon card-data p-8 flex flex-col group cursor-pointer">
+        <div class="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-6 text-amber-700 group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">science</span></div>
+        <h3 class="font-headline-md text-headline-md text-deep-navy mb-3 group-hover:text-amber-700 transition-colors">Applied Sciences &amp; Pharmaceutical Sciences</h3>
+        <p class="font-body-md text-body-md text-secondary mt-auto leading-relaxed">Research in Scientific research, healthcare technologies, and pharmaceutical innovations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBMISSION SECTION -->
+<section id="submission" class="bg-background py-20">
+  <div class="w-full max-w-container-max mx-auto px-margin-desktop flex flex-col gap-12">
+    <header class="text-center max-w-3xl mx-auto space-y-4">
+      <h1 class="font-display-lg text-display-lg text-deep-navy mb-4 relative inline-block">PAPER SUBMISSION GUIDELINES
+        <span class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-transparent via-golden-glow to-transparent rounded-full opacity-50"></span>
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">Inviting innovative research from undergraduate students worldwide to present at the premier IGNITE 2026 conference.</p>
+    </header>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-3 bg-gradient-to-br from-paper-white to-surface-container-low border border-primary/20 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] transition-all duration-300">
+        <div class="flex-1 space-y-2">
+          <div class="flex items-center gap-2 text-primary">
+            <span class="material-symbols-outlined fill-icon">upload_file</span>
+            <h2 class="font-headline-md text-headline-md text-deep-navy">Submit Your Research</h2>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">Authors can submit their research papers through the official submission form. Please ensure all guidelines are met before submission.</p>
+        </div>
+        <button class="shrink-0 bg-surface-variant text-on-surface-variant font-label-md px-8 py-4 rounded-full cursor-not-allowed opacity-70 border border-outline-variant">Submission Form (Coming Soon)</button>
+      </div>
+      <div class="bg-paper-white border border-outline-variant rounded-xl p-6 shadow-sm hover:border-golden-glow/50 transition-colors duration-300">
+        <div class="flex items-center gap-2 mb-4 text-tertiary"><span class="material-symbols-outlined">school</span><h3 class="font-headline-md text-headline-md text-deep-navy">Eligibility</h3></div>
+        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span><span>Open to Undergraduate Students only</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span><span>Faculty members may be included as co-authors</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span><span>Paper presentation must be done only by student authors</span></li>
+        </ul>
+      </div>
+      <div class="bg-paper-white border border-outline-variant rounded-xl p-6 shadow-sm hover:border-golden-glow/50 transition-colors duration-300">
+        <div class="flex items-center gap-2 mb-4 text-primary"><span class="material-symbols-outlined">description</span><h3 class="font-headline-md text-headline-md text-deep-navy">Paper Format</h3></div>
+        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[20px] mt-1">format_align_left</span><span>IEEE Conference Format</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[20px] mt-1">format_align_left</span><span>Maximum paper length: 6 pages</span></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[20px] mt-1">format_align_left</span><span>Original and unpublished work is encouraged</span></li>
+        </ul>
+      </div>
+      <div class="bg-paper-white border border-outline-variant rounded-xl p-6 shadow-sm hover:border-golden-glow/50 transition-colors duration-300">
+        <div class="flex items-center gap-2 mb-4 text-golden-glow"><span class="material-symbols-outlined">payments</span><h3 class="font-headline-md text-headline-md text-deep-navy">Registration for accepted paper</h3></div>
+        <div class="space-y-4">
+          <div class="flex justify-between items-center pb-2 border-b border-outline-variant/30"><span class="font-body-md text-body-md text-on-surface-variant">IEEE Members</span><span class="font-label-md text-label-md text-deep-navy">₹200</span></div>
+          <div class="flex justify-between items-center"><span class="font-body-md text-body-md text-on-surface-variant">Non-IEEE Members</span><span class="font-label-md text-label-md text-deep-navy">₹250</span></div>
+        </div>
+      </div>
+      <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-soft-gold/20 border border-golden-glow/30 rounded-xl p-6 shadow-sm">
+          <div class="flex items-center gap-2 mb-4 text-deep-navy"><span class="material-symbols-outlined">location_on</span><h3 class="font-headline-md text-headline-md text-deep-navy">Hybrid Mode</h3></div>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">We support flexible presentation options to accommodate all participants.</p>
+          <ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span><span>Indore Region: Offline Presentation</span></li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span>Outstation: Online Presentation</span></li>
+          </ul>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 shadow-sm">
+          <div class="flex items-center gap-2 mb-4 text-primary"><span class="material-symbols-outlined">workspace_premium</span><h3 class="font-headline-md text-headline-md text-deep-navy">Certification</h3></div>
+          <p class="font-body-md text-body-md text-on-surface-variant">Certificates will be provided to all participants. Special awards and recognition await outstanding research presentations.</p>
+        </div>
+      </div>
+      <div class="md:col-span-1 bg-deep-navy text-on-primary rounded-xl p-6 shadow-sm flex flex-col justify-center">
+        <div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-golden-glow">info</span><h4 class="font-label-md text-label-md text-golden-glow uppercase tracking-wider">Important Note</h4></div>
+        <p class="font-body-md text-body-md text-inverse-primary/90">Ensure you select the correct conference track corresponding to your research domain during submission to avoid processing delays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE SECTION -->
+<section id="timeline" class="py-20 bg-white">
+  <div class="max-w-container-max mx-auto px-margin-desktop">
+    <header class="text-center mb-20">
+      <h1 class="font-display-lg text-display-lg text-deep-navy mb-4">IMPORTANT DATES</h1>
+      <div class="flex justify-center mt-6"><div class="h-1 w-24 bg-gradient-to-r from-transparent via-golden-glow to-transparent rounded-full"></div></div>
+      <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mt-6">Navigate the critical milestones of our conference lifecycle.</p>
+    </header>
+    <div class="flow-container relative w-full">
+      <div class="hidden md:block flow-line-h line-1"></div>
+      <div class="hidden md:block flow-line-v line-2"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 relative z-10">
+        <div class="bento-card rounded-xl p-8 md:p-10 flex flex-col justify-between min-h-[300px] border-2 border-primary/20 animate-pulse-glow hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="bento-content">
+            <div class="flex justify-between items-start mb-6"><span class="material-symbols-outlined text-4xl text-primary">description</span><span class="font-label-md text-label-md uppercase tracking-wider status-badge-active">Active Phase</span></div>
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-2">Paper Submission Starts</h2>
+            <p class="font-body-lg text-body-lg text-secondary">The submission portal opens for abstracts and full manuscripts.</p>
+          </div>
+          <div class="bento-content mt-8 pt-6 border-t border-primary/10"><p class="font-headline-md text-headline-md text-primary font-bold">1 June 2026</p></div>
+        </div>
+        <div class="bento-card rounded-xl p-8 flex flex-col justify-between min-h-[300px] border-2 border-primary/20 animate-pulse-glow hover:scale-[1.02] hover:shadow-lg transition-all duration-300">
+          <div class="bento-content">
+            <div class="flex justify-between items-start mb-6"><span class="material-symbols-outlined text-3xl text-tertiary-container">event_busy</span><span class="font-label-md text-label-md uppercase tracking-wider status-badge">Critical Deadline</span></div>
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-2">Paper Submission Ends</h2>
+            <p class="font-body-md text-body-md text-secondary">Final deadline for all submissions. No extensions will be granted.</p>
+          </div>
+          <div class="bento-content mt-8 pt-4 border-t border-outline-variant/30"><p class="font-headline-md text-headline-md font-bold text-primary">10 September 2026</p></div>
+        </div>
+        <div class="bento-card rounded-xl p-8 flex flex-col justify-between min-h-[300px] border-2 border-primary/20 animate-pulse-glow hover:shadow-inner transition-all duration-300">
+          <div class="bento-content">
+            <div class="flex justify-between items-start mb-6"><span class="material-symbols-outlined text-3xl text-secondary">mark_email_read</span></div>
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-2">Notification of Acceptance</h2>
+            <p class="font-body-md text-body-md text-secondary">Authors will be notified of review outcomes via email.</p>
+          </div>
+          <div class="bento-content mt-8 pt-4 border-t border-outline-variant/30"><p class="font-headline-md text-headline-md text-primary font-bold">10 October 2026</p></div>
+        </div>
+        <div class="bento-card rounded-xl p-8 flex flex-col justify-between min-h-[300px] border-2 border-primary/20 animate-pulse-glow hover:border-tertiary-container transition-all duration-300 shine-sweep">
+          <div class="bento-content">
+            <div class="flex justify-between items-start mb-6"><span class="material-symbols-outlined text-3xl text-secondary">print</span></div>
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-2">Camera Ready Submission</h2>
+            <p class="font-body-md text-body-md text-secondary">Final formatted manuscripts due for inclusion in proceedings.</p>
+          </div>
+          <div class="bento-content mt-8 pt-4 border-t border-outline-variant/30"><p class="font-headline-md text-headline-md text-primary font-bold">20 October 2026</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITTEE SECTION -->
+<section id="committee" class="py-24 bg-surface-container-lowest">
+  <div class="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="text-center mb-20 flex flex-col items-center">
+      <h1 class="font-display-lg text-display-lg text-deep-navy uppercase text-[44px] font-bold">Conference Committee</h1>
+      <span class="block mx-auto w-32 h-1.5 bg-gradient-to-r from-transparent via-golden-glow to-transparent rounded-full opacity-80 mt-1"></span>
+      <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mt-4">Meet the distinguished academic leaders, coordinators, and organizing members driving IEEE IGNITE 2.0.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24 max-w-4xl mx-auto">
+      <div class="bento-card p-8 rounded-xl flex flex-col items-center text-center gap-2">
+        <h3 class="font-headline-md text-headline-md text-deep-navy">Dr. Gaurav Chaitanya</h3>
+        <p class="font-label-md text-label-md text-tertiary tracking-widest uppercase">Conference Chair</p>
+      </div>
+      <div class="bento-card p-8 rounded-xl flex flex-col items-center text-center gap-2">
+        <h3 class="font-headline-md text-headline-md text-deep-navy">Dr. Sushma Khatri</h3>
+        <p class="font-label-md text-label-md text-tertiary tracking-widest uppercase">Conference Co-Chair</p>
+      </div>
+    </div>
+    <div class="mb-24">
+      <div class="text-center mb-12 flex flex-col items-center">
+        <h2 class="font-headline-lg text-headline-lg text-deep-navy font-bold text-[26px]">Track Chairs</h2>
+        <span class="block mx-auto mt-4 w-24 h-1.5 bg-gradient-to-r from-transparent via-golden-glow to-transparent rounded-full opacity-80"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bento-card p-8 rounded-xl border-l-4 border-primary group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-primary-container/10 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors"><span class="material-symbols-outlined">hub</span></div>
+            <h4 class="font-headline-md text-headline-md text-deep-navy leading-tight">Prof. Lucky Saxena</h4>
+          </div>
+          <p class="font-body-md text-body-md text-secondary leading-relaxed">Intelligent Systems, Data Science &amp; Computational Intelligence</p>
+        </div>
+        <div class="bento-card p-8 rounded-xl border-l-4 border-tertiary group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-tertiary-container/10 p-3 rounded-lg text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors"><span class="material-symbols-outlined">security</span></div>
+            <h4 class="font-headline-md text-headline-md text-deep-navy leading-tight">Prof. Nidhi Nigam</h4>
+          </div>
+          <p class="font-body-md text-body-md text-secondary leading-relaxed">Secure, Distributed &amp; Next-Generation Computing Systems</p>
+        </div>
+        <div class="bento-card p-8 rounded-xl border-l-4 border-golden-glow group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-soft-gold p-3 rounded-lg text-golden-glow group-hover:bg-golden-glow group-hover:text-white transition-colors"><span class="material-symbols-outlined">settings_suggest</span></div>
+            <h4 class="font-headline-md text-headline-md text-deep-navy leading-tight">Dr. Asmita Rajawat</h4>
+          </div>
+          <p class="font-body-md text-body-md text-secondary leading-relaxed">Next-Generation Core Engineering Systems</p>
+        </div>
+        <div class="bento-card p-8 rounded-xl border-l-4 border-primary group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-primary-container/10 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors"><span class="material-symbols-outlined">query_stats</span></div>
+            <h4 class="font-headline-md text-headline-md text-deep-navy leading-tight">Dr. Alpana Deshmukh</h4>
+          </div>
+          <p class="font-body-md text-body-md text-secondary leading-relaxed">Management, Business Analytics &amp; Organizational Studies</p>
+        </div>
+        <div class="bento-card p-8 rounded-xl border-l-4 border-tertiary group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-tertiary-container/10 p-3 rounded-lg text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors"><span class="material-symbols-outlined">science</span></div>
+            <h4 class="font-headline-md text-headline-md text-deep-navy leading-tight">Prof. Kavita Namdev</h4>
+          </div>
+          <p class="font-body-md text-body-md text-secondary leading-relaxed">Applied Sciences &amp; Pharmaceutical Sciences</p>
+        </div>
+      </div>
+    </div>
+    <div class="mb-24">
+      <div class="text-center mb-12 flex flex-col items-center">
+        <h2 class="font-headline-lg text-headline-lg text-deep-navy font-bold text-[26px]">Specialized Committees</h2>
+        <span class="block mx-auto mt-4 w-24 h-1.5 bg-gradient-to-r from-transparent via-golden-glow to-transparent rounded-full opacity-80"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bento-card p-6 rounded-lg border-t-4 border-primary"><p class="font-label-sm text-label-sm text-primary mb-2 uppercase font-semibold">Hospitality &amp; Logistics</p><h5 class="font-headline-md text-headline-md text-on-surface">Prof. Anagha Chougaonkar</h5></div>
+        <div class="bento-card p-6 rounded-lg border-t-4 border-tertiary"><p class="font-label-sm text-label-sm text-primary mb-2 uppercase font-semibold">WiE Liaison CHAIR</p><h5 class="font-headline-md text-headline-md text-on-surface">Prof. Harshita Sharma</h5></div>
+        <div class="bento-card p-6 rounded-lg border-t-4 border-golden-glow"><p class="font-label-sm text-label-sm text-primary mb-2 uppercase font-semibold">Publicity Chair</p><h5 class="font-headline-md text-headline-md text-on-surface">Prof. Mahendra Verma</h5></div>
+        <div class="bento-card p-6 rounded-lg border-t-4 border-primary"><p class="font-label-sm text-label-sm text-primary mb-2 uppercase font-semibold">YP Liaisoning CHAIR</p><h5 class="font-headline-md text-headline-md text-on-surface">Prof. Himanshu Bhiwapurkar</h5></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="bg-background py-20">
+  <div class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-3xl mb-16">
+      <h1 class="font-display-lg text-display-lg text-deep-navy mb-6">Contact Us</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">We'd be delighted to assist you with any queries regarding IGNITE 2026. Feel free to reach out to the organizing committee for conference-related information, paper submissions, registration support, or participation details.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+      <div class="col-span-1 lg:col-span-7 bg-paper-white rounded-lg border border-outline-variant shadow-custom-subtle p-8 hover-glow transition-all duration-300 group">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 rounded-full bg-soft-gold flex items-center justify-center text-golden-glow"><span class="material-symbols-outlined fill-icon">location_on</span></div>
+          <h2 class="font-headline-md text-headline-md text-primary">Conference Venue</h2>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-md">Acropolis Institute Of Technology And Research - AITR, Bypass Road, Square, Malwa County, Manglaya Sadak, Indore, Madhya Pradesh 453771, India</p>
+        <div class="w-full h-64 bg-surface-container rounded mb-8 overflow-hidden border border-surface-variant">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2fuaGk0Dt7PrCCykytVyBCScHEknKv8wK_wAZwhGX7RQ9hDeCOToH8Q3vESHbieYbp_NanVDDWIrDDd5dGJfJl_5oxoYtPUN63ZJXOmpAYENpyGYioP_kLGwDKsg0TeaSFDENU4ZFYjO0UkoXOJLjSwKUx2K6T8GLPLnK793AGDsz9EuxUPgO2kJfqpUBdBDpQS3JLUAqX1fOZLKSh3PAmzoJKvqwxiJP1vYSydfSXLsglWkq8_rzp6PZN_vW2snHk981ZwFstPk" alt="Map location" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+        </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gold-gradient text-deep-navy font-label-md text-label-md px-8 py-4 rounded hover:opacity-90 transition-all duration-300">
+          <span class="material-symbols-outlined text-[20px]">map</span> Open in Google Maps
+        </a>
+      </div>
+      <div class="col-span-1 lg:col-span-5 flex flex-col gap-gutter">
+        <div class="bg-paper-white rounded-lg border border-outline-variant shadow-custom-subtle p-8 hover-glow transition-all duration-300">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined">mail</span></div>
+            <h3 class="font-headline-md text-headline-md text-deep-navy">Email Us</h3>
+          </div>
+          <div class="flex flex-col gap-4">
+            <a href="mailto:gauravchaitanya@ieee.org" class="font-body-lg text-body-lg text-primary hover:text-golden-glow transition-colors break-all">gauravchaitanya@ieee.org</a>
+            <div class="w-full h-px bg-surface-variant"></div>
+            <a href="mailto:sushmakhatri@acropolis.in" class="font-body-lg text-body-lg text-primary hover:text-golden-glow transition-colors break-all">sushmakhatri@acropolis.in</a>
+          </div>
+        </div>
+        <div class="bg-paper-white rounded-lg border border-outline-variant shadow-custom-subtle p-8 hover-glow transition-all duration-300">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined">phone</span></div>
+            <h3 class="font-headline-md text-headline-md text-deep-navy">Call Us</h3>
+          </div>
+          <div class="flex flex-col gap-4">
+            <a href="tel:+919826049818" class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between group">+91 98260 49818<span class="material-symbols-outlined text-outline-variant group-hover:text-golden-glow transition-colors text-[20px]">arrow_forward</span></a>
+            <div class="w-full h-px bg-surface-variant"></div>
+            <a href="tel:+919826024764" class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between group">+91 98260 24764<span class="material-symbols-outlined text-outline-variant group-hover:text-golden-glow transition-colors text-[20px]">arrow_forward</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="w-full py-16 bg-surface border-t border-outline-variant/30">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+    <div class="space-y-4">
+      <p class="font-headline-md text-deep-navy font-bold">IGNITE 2026</p>
+      <p class="font-body-md text-body-md text-on-surface-variant">Advancing research boundaries through collaborative innovation and technological excellence.</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <p class="font-label-caps text-primary mb-2 font-bold">QUICK LINKS</p>
+      <a href="#" class="font-body-md text-body-md text-on-surface-variant hover:text-coral-warmth transition-colors">Privacy Policy</a>
+      <a href="#" class="font-body-md text-body-md text-on-surface-variant hover:text-coral-warmth transition-colors">Code of Conduct</a>
+      <a href="#" class="font-body-md text-body-md text-on-surface-variant hover:text-coral-warmth transition-colors">IEEE Standards</a>
+      <a href="#contact" class="font-body-md text-body-md text-on-surface-variant hover:text-coral-warmth transition-colors">Contact Us</a>
+    </div>
+    <div class="space-y-4">
+      <p class="font-label-caps text-primary font-bold">LOCATION</p>
+      <p class="font-body-md text-body-md text-on-surface-variant">Acropolis Institute of Technology and Research,<br>Indore - 453771, Madhya Pradesh, India</p>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">public</span>
+        <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">share</span>
+        <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">mail</span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-16 text-center px-margin-desktop">
+    <p class="font-body-md text-body-md text-on-surface-variant opacity-80">© 2026 IGNITE Research Conference. Hosted at Acropolis Institute of Technology and Research, Indore.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
