@@ -135,6 +135,16 @@ tailwind.config = {
 }
 </script>
 <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    min-height: 100vh;
+    background-color: #f4fafd;
+  }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   .fill-icon { font-variation-settings: 'FILL' 1; }
   .hero-gradient {
@@ -143,6 +153,37 @@ tailwind.config = {
     background-position: center;
   }
   .logo-glow { filter: drop-shadow(0 0 8px rgba(212,175,55,0.6)); }
+  .hero-logo-box {
+    position: relative;
+    min-width: 5.5rem;
+    padding: 0.6rem;
+    border-radius: 1.5rem;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(212,175,55,0.85);
+    box-shadow: 0 0 18px rgba(212,175,55,0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+  }
+  .hero-logo-box img {
+    border-radius: 0.9rem;
+  }
+  .hero-logo-box::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: inherit;
+    background: radial-gradient(circle at center, rgba(212,175,55,0.35), transparent 60%);
+    filter: blur(16px);
+    opacity: 0.85;
+    z-index: -1;
+  }
+  .hero-logo-box:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 32px rgba(212,175,55,0.35);
+  }
+  .hero-logo-line {
+    z-index: 0;
+  }
   .gold-gradient {
     background: linear-gradient(to right, #D4AF37, #FFD700, #DAA520, #F0E68C, #B8860B);
     -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -200,9 +241,9 @@ tailwind.config = {
 
 <!-- NAVBAR -->
 <nav class="fixed top-0 w-full z-50 bg-paper-white/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
-  <div class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+  <div class="flex justify-between items-center px-margin-desktop h-28 max-w-container-max mx-auto">
     <div class="flex items-center gap-4">
-      <img src="ignite_logo.png" alt="IGNITE Logo" class="h-20 w-auto max-w-[240px] object-contain">
+      <img src="ignite_logo.png" alt="IGNITE Logo" class="h-24 md:h-32 w-auto max-w-[260px] object-contain">
     </div>
     <div class="hidden md:flex gap-6 items-center">
       <a href="#home" class="font-label-caps text-sm text-deep-navy uppercase tracking-[0.1em] hover:text-primary transition-colors">Home</a>
@@ -218,17 +259,20 @@ tailwind.config = {
 </nav>
 
 <!-- HOME SECTION -->
-<section id="home" class="relative min-h-[95vh] flex flex-col items-center justify-center text-center overflow-hidden hero-gradient pt-20">
+<section id="home" class="relative min-h-[95vh] flex flex-col items-center justify-center text-center overflow-hidden hero-gradient pt-28">
   <div class="w-full max-w-2xl px-margin-mobile mb-12 flex justify-center items-center">
-    <div class="flex items-center bg-white shadow-xl border-2 border-golden-glow overflow-hidden divide-x divide-golden-glow/30 logo-glow rounded-full">
-      <div class="px-3 py-2 flex items-center justify-center">
-        <img src="student_branch.png" alt="IEEE Student Branch" class="h-20 w-32 object-contain">
-      </div>
-      <div class="px-3 py-2 flex items-center justify-center bg-surface-container-low">
-        <img src="acropolis.png" alt="Acropolis" class="h-20 w-32 object-contain">
-      </div>
-      <div class="px-3 py-2 flex items-center justify-center">
-        <img src="cssbc.png" alt="Computer Society" class="h-20 w-32 object-contain">
+    <div class="relative w-full max-w-[520px] flex items-center justify-center">
+      <div class="hero-logo-line absolute inset-x-4 top-1/2 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-90"></div>
+      <div class="relative z-10 flex items-center justify-center gap-4">
+        <div class="hero-logo-box flex items-center justify-center">
+          <img src="student_branch.png" alt="IEEE Student Branch" class="h-12 w-auto object-contain">
+        </div>
+        <div class="hero-logo-box flex items-center justify-center">
+          <img src="acropolis.png" alt="Acropolis" class="h-12 w-auto object-contain">
+        </div>
+        <div class="hero-logo-box flex items-center justify-center">
+          <img src="cssbc.png" alt="Computer Society" class="h-12 w-auto object-contain">
+        </div>
       </div>
     </div>
   </div>
@@ -287,10 +331,11 @@ tailwind.config = {
   <div class="max-w-container-max mx-auto px-margin-desktop text-center">
     <span class="font-label-caps text-on-surface-variant/60 font-bold tracking-widest text-lg">PROUDLY SUPPORTED BY</span>
     <div class="mt-12 flex flex-wrap justify-center items-center gap-12">
-      <img src="logo1.png" alt="Sponsor 1" class="h-16 object-contain">
+      <img src="logo1.png" alt="Sponsor 1" class="h-24 object-contain">
       <img src="logo2.png" alt="Sponsor 2" class="h-16 object-contain">
-      <img src="logo3.jpeg" alt="Sponsor 3" class="h-16 object-contain">
+      <img src="logo3.png" alt="Sponsor 3" class="h-16 object-contain">
       <img src="logo4.jpeg" alt="Sponsor 4" class="h-16 object-contain">
+      <img src="logo5.png" alt="Sponsor 5" class="h-16 object-contain">
     </div>
     <p class="mt-12 text-on-surface-variant italic text-base">Partner with us to empower the next generation of innovators.</p>
   </div>
@@ -438,7 +483,7 @@ tailwind.config = {
       <h1 class="font-display-lg text-display-lg text-deep-navy mb-4 relative inline-block">PAPER SUBMISSION GUIDELINES
         <span class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-transparent via-golden-glow to-transparent rounded-full opacity-50"></span>
       </h1>
-      <p class="font-body-lg text-body-lg text-on-surface-variant">Inviting innovative research from undergraduate students worldwide to present at the premier IGNITE 2026 conference.</p>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">Inviting innovative research from undergraduate students nationwide to present at the IEEE IGNITE 2.0 conference.</p>
     </header>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="md:col-span-3 bg-gradient-to-br from-paper-white to-surface-container-low border border-primary/20 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] transition-all duration-300">
@@ -690,9 +735,9 @@ tailwind.config = {
         </div>
         <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-md">Acropolis Institute Of Technology And Research - AITR, Bypass Road, Square, Malwa County, Manglaya Sadak, Indore, Madhya Pradesh 453771, India</p>
         <div class="w-full h-64 bg-surface-container rounded mb-8 overflow-hidden border border-surface-variant">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2fuaGk0Dt7PrCCykytVyBCScHEknKv8wK_wAZwhGX7RQ9hDeCOToH8Q3vESHbieYbp_NanVDDWIrDDd5dGJfJl_5oxoYtPUN63ZJXOmpAYENpyGYioP_kLGwDKsg0TeaSFDENU4ZFYjO0UkoXOJLjSwKUx2K6T8GLPLnK793AGDsz9EuxUPgO2kJfqpUBdBDpQS3JLUAqX1fOZLKSh3PAmzoJKvqwxiJP1vYSydfSXLsglWkq8_rzp6PZN_vW2snHk981ZwFstPk" alt="Map location" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+          <img src="acro_snap.png" alt="Map location" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
         </div>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gold-gradient text-deep-navy font-label-md text-label-md px-8 py-4 rounded hover:opacity-90 transition-all duration-300">
+        <a href="https://www.google.com/maps/search/?api=1&query=Acropolis+Institute+Of+Technology+And+Research+-+AITR,+Bypass+Road,+Square,+Malwa+County,+Manglaya+Sadak,+Indore,+Madhya+Pradesh+453771,+India" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gold-gradient text-deep-navy font-label-md text-label-md px-8 py-4 rounded hover:opacity-90 transition-all duration-300">
           <span class="material-symbols-outlined text-[20px]">map</span> Open in Google Maps
         </a>
       </div>
