@@ -206,7 +206,7 @@ tailwind.config = {
     position: relative; z-index: 1; transition: all 0.4s cubic-bezier(0.25,0.8,0.25,1); overflow: hidden;
   }
   .glass-card-neon:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(15,27,136,0.1); border-color: transparent; }
-  .glass-card-neon::before { content:''; position:absolute; inset:0; border-radius:1rem; padding:2px; background:linear-gradient(135deg,#00d2ff,#3a7bd5); -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity 0.4s ease; z-index:-1; }
+  .glass-card-neon::before { content:''; position:absolute; inset:0; border-radius:1rem; padding:2px; background:linear-gradient(135deg,#00d2ff,#3a7bd5); -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity 0.4s ease; z-index:-1; }
   .glass-card-neon:hover::before { opacity:1; }
   .card-ai::before { background: linear-gradient(135deg,#00c6ff,#0072ff); }
   .card-iot::before { background: linear-gradient(135deg,#f12711,#f5af19); }
@@ -220,8 +220,8 @@ tailwind.config = {
   }
   .bento-card:hover { box-shadow: 0 0 20px 2px rgba(212,175,55,0.3); border-color: #D4AF37; transform: translateY(-4px); }
   .bento-content { position: relative; z-index: 1; }
-  .status-badge { background: linear-gradient(90deg,#be5434,#9e3c1e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-  .status-badge-active { background: linear-gradient(90deg,#345f89,#0F1B88); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .status-badge { background: linear-gradient(90deg,#be5434,#9e3c1e); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .status-badge-active { background: linear-gradient(90deg,#345f89,#0F1B88); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .flow-line-h { position:absolute; height:2px; background:linear-gradient(90deg,transparent,#a1cafb,transparent); background-size:200% 100%; opacity:0.5; z-index:0; }
   .flow-line-v { position:absolute; width:2px; background:linear-gradient(180deg,transparent,#a1cafb,transparent); background-size:100% 200%; opacity:0.5; z-index:0; }
   @media (min-width:768px) {
