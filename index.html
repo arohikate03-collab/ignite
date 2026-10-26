@@ -304,7 +304,7 @@ tailwind.config = {
       <h1 class="font-headline-xl text-5xl md:text-headline-xl md:text-[90px] font-extrabold tracking-tight text-white drop-shadow-lg">IEEE IGNITE 2.0</h1>
       <div class="relative inline-block mt-4">
         <div class="absolute inset-0 bg-coral-warmth -skew-x-6"></div>
-        <h2 class="relative font-headline-lg text-base md:text-2xl tracking-[0.2em] uppercase py-3 px-8 text-white font-bold">RESEARCH AND PROFESSIONAL AWARENESS CONFERENCE</h2>
+        <h2 class="relative font-headline-lg text-base md:text-2xl tracking-[0.2em] uppercase py-3 px-8 text-white font-bold">STUDENT RESEARCH AND PROFESSIONAL AWARENESS CONFERENCE</h2>
       </div>
     </div>
     <div class="pt-6 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
@@ -549,23 +549,20 @@ tailwind.config = {
           <div class="flex justify-between items-center"><span class="font-body-md text-body-md text-on-surface-variant">Non-IEEE Members</span><span class="font-label-md text-label-md text-deep-navy">₹250</span></div>
         </div>
       </div>
-      <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-soft-gold/20 border border-golden-glow/30 rounded-xl p-6 shadow-sm">
-          <div class="flex items-center gap-2 mb-4 text-deep-navy"><span class="material-symbols-outlined">location_on</span><h3 class="font-headline-md text-headline-md text-deep-navy">Hybrid Mode</h3></div>
-          <p class="font-body-md text-body-md text-on-surface-variant mb-4">We offer flexible presentation modes to accommodate all participants.</p>
-          <ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
-            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span><span>Indore Region: In-person Presentation</span></li>
-            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span>Outside Indore: Virtual Presentation</span></li>
-          </ul>
-        </div>
-        <div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 shadow-sm">
-          <div class="flex items-center gap-2 mb-4 text-primary"><span class="material-symbols-outlined">workspace_premium</span><h3 class="font-headline-md text-headline-md text-deep-navy">Certification</h3></div>
-          <p class="font-body-md text-body-md text-on-surface-variant">Certificates of participation will be awarded to all attendees. Outstanding research presentations will receive special recognition and awards.</p>
-        </div>
+      <div class="md:col-span-1 bg-soft-gold/20 border border-golden-glow/30 rounded-xl p-6 shadow-sm">
+        <div class="flex items-center gap-2 mb-4 text-deep-navy"><span class="material-symbols-outlined">location_on</span><h3 class="font-headline-md text-headline-md text-deep-navy">Hybrid Mode</h3></div>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">We offer flexible presentation modes to accommodate all participants.</p>
+        <ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span><span>Indore Region: In-person Presentation</span></li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span>Outside Indore: Virtual Presentation</span></li>
+        </ul>
       </div>
-      <div class="md:col-span-1 bg-deep-navy text-on-primary rounded-xl p-6 shadow-sm flex flex-col justify-center">
-        <div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-golden-glow">info</span><h4 class="font-label-md text-label-md text-golden-glow uppercase tracking-wider">Important Note</h4></div>
-        <p class="font-body-md text-body-md text-inverse-primary/90">Ensure correct track selection corresponding to your research domain during submission to facilitate accurate review and avoid processing delays.</p>
+      <div class="md:col-span-2 bg-paper-white border border-outline-variant rounded-xl p-6 shadow-sm">
+        <div class="flex items-center gap-2 mb-4 text-primary"><span class="material-symbols-outlined">menu_book</span><h3 class="font-headline-md text-headline-md text-deep-navy">Publication Details</h3></div>
+        <ol class="list-decimal pl-5 space-y-3 font-body-md text-body-md text-on-surface-variant">
+          <li>The abstracts of all accepted papers will be published in the <strong>Conference Souvenir (Book of Abstracts)</strong>.</li>
+          <li>Some of the selected papers accepted for presentation will be published in the <a href="https://delving.in/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-deep-navy underline transition-colors"><strong>Delving: Journal of Technology and Engineering Sciences</strong></a>, bearing <strong>ISSN 0975-5829</strong>.</li>
+        </ol>
       </div>
     </div>
   </div>
@@ -721,7 +718,10 @@ tailwind.config = {
     <div class="text-center pb-12 flex flex-col items-center">
       <h2 class="font-headline-lg text-headline-lg text-deep-navy font-bold text-[26px] uppercase tracking-wide">Session Chairs</h2>
       <span class="block mx-auto mt-4 w-24 h-1.5 bg-gradient-to-r from-transparent via-golden-glow to-transparent rounded-full opacity-80"></span>
-      <p class="mt-6 text-secondary font-body-md">Distinguished session chairs will be announced soon.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-3xl mt-6 text-left">
+        <div class="bento-card p-5 rounded-lg border-l-4 border-primary flex items-center min-h-20"><p class="font-body-md text-on-surface font-medium">Dr Pushpa Pathak</p></div>
+        <div class="bento-card p-5 rounded-lg border-l-4 border-tertiary flex items-center min-h-20"><p class="font-body-md text-on-surface font-medium">Dr Bhaswati Ghosh</p></div>
+      </div>
     </div>
   </div>
 </section>
